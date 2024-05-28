@@ -278,7 +278,7 @@ $.fn.mauGallery.listeners = function(options) {
       }
       
       $(".active-tag").removeClass("active active-tag");
-      $(tagElement).addClass("active-tag");
+      $(tagElement).addClass("active active-tag");
     
       $(".gallery-item").each(function() {
         var $parentColumn = $(this).closest(".item-column");
