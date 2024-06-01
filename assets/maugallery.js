@@ -48,6 +48,7 @@
     tagsPosition: "bottom",
     navigation: true
   };
+// chatgpt (probleme this fonction flechee)
 // chatgpt
 $.fn.mauGallery.listeners = function(options) {
   $(".gallery-item").on("click", function() {
@@ -71,27 +72,7 @@ $.fn.mauGallery.listeners = function(options) {
   });
 };
 //chatgpt
-
-  // $.fn.mauGallery.listeners = function(options) {
-  //   $(".gallery-item").on("click", function() {
-  //     if (options.lightBox && $(this).prop("tagName") === "IMG") {
-  //       $.fn.mauGallery.methods.openLightBox($(this), options.lightboxId);
-  //     } else {
-  //       return;
-  //     }
-  //   });
-
-  //   $(".nav-link").on("click", () =>
-  //     $.fn.mauGallery.methods.filterByTag()
-  //   );
-  //   $(".mg-prev").on("click", () =>
-  //     $.fn.mauGallery.methods.prevImage(options.lightboxId)
-  //   );
-  //   $(".mg-next").on("click", () =>
-  //     $.fn.mauGallery.methods.nextImage(options.lightboxId)
-  //   );
-  //   // choumpu choumpe
-  // };
+//chatgpt
   $.fn.mauGallery.methods = {
     createRowWrapper(element) {
       if (
@@ -147,7 +128,8 @@ $.fn.mauGallery.listeners = function(options) {
       $(`#${lightboxId}`).modal("toggle");
     },
 
-    //chatgpt
+  //chatgpt
+  //chatgpt
     prevImage: function() {
       console.log("prevImage");
     
@@ -186,9 +168,11 @@ $.fn.mauGallery.listeners = function(options) {
     
       $(".lightboxImage").attr("src", prevImage.attr("src"));
     },
-    //chatgpt
+  //chatgpt
+  //chatgpt
 
-    //chatgpt
+  //chatgpt
+  //chatgpt
     nextImage: function() {
       console.log("nextimage");
     
@@ -227,7 +211,8 @@ $.fn.mauGallery.listeners = function(options) {
     
       $(".lightboxImage").attr("src", nextImage.attr("src"));
     },
-    //chatgpt
+  //chatgpt
+  //chatgpt
 
     createLightBox(gallery, lightboxId, navigation) {
       gallery.append(`<div class="modal fade" id="${
