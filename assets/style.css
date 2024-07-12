@@ -95,8 +95,22 @@ body {
 }
 .title{
 	text-align: center;
-	padding-block: 2em;
+    padding-block: 2em;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    font-size: calc(1.3rem + 0.6vw);
 }
+
+.contact_title {
+	font-size: calc(1.3rem + 0.6vw);
+	margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
 .gallery .nav {
 	justify-content: center;
 }
@@ -147,6 +161,12 @@ body {
 	font-family: Spectral;
 	font-style: italic;
 	font-weight: 300;
+	display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
 
 }
 .quote__author {
