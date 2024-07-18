@@ -115,9 +115,9 @@ body {
     margin-inline-end: 0px;
 }
 
-/* .nav-link:hover {
+.nav-link:hover {
 	cursor: pointer;
-} */
+}
 
 .gallery .nav {
 	justify-content: center;
