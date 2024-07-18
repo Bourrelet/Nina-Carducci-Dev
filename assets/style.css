@@ -89,7 +89,7 @@ body {
     line-height: 1.2;
 	font-size: 1rem;
 }
-#about-me p {
+#about-me p:last-of-type {
 	width: 80%;
 	font-size: 14px;
 }
@@ -114,6 +114,10 @@ body {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
 }
+
+/* .nav-link:hover {
+	cursor: pointer;
+} */
 
 .gallery .nav {
 	justify-content: center;
@@ -225,6 +229,7 @@ body {
 #contact .container {
 	display: flex;
 }
+
 .picture.right::before {
 	content: ' ';
 	background-color: #BEB45A;
@@ -279,7 +284,7 @@ input[type="submit"] {
 		margin-top: 0;
 		margin-bottom: 1em;
 	}
-	#about-me .about-me__introduction, #about-me p {
+	#about-me .about-me__introduction, #about-me p:last-of-type {
 		width: 100%;
 	}
 }
