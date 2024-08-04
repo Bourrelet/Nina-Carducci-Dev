@@ -48,8 +48,8 @@
     tagsPosition: "bottom",
     navigation: true
   };
-// chatgpt (probleme this fonction flechee)
-// chatgpt
+// Modification de syntaxe, ; fonctionalites modale
+// this etait inadapte aux fonctions flechees, on preferera les fonctions classiques.
 $.fn.mauGallery.listeners = function(options) {
   $(".gallery-item").on("click", function() {
     if (options.lightBox && $(this).prop("tagName") === "IMG") {
@@ -60,8 +60,8 @@ $.fn.mauGallery.listeners = function(options) {
   });
 
   $(".gallery").on("click", ".nav-link", function() {
-    $.fn.mauGallery.methods.filterByTag(this);
-  });
+    $.fn.mauGallery.methods.filterByTag(this); 
+  }); // On passe l'element clique (this) en argument de filterbytag
 
   $(".gallery").on("click", ".mg-prev", function() {
     $.fn.mauGallery.methods.prevImage(options.lightboxId);
@@ -71,8 +71,8 @@ $.fn.mauGallery.listeners = function(options) {
     $.fn.mauGallery.methods.nextImage(options.lightboxId);
   });
 };
-//chatgpt
-//chatgpt
+//Modification
+//Modification
   $.fn.mauGallery.methods = {
     createRowWrapper(element) {
       if (
@@ -128,8 +128,8 @@ $.fn.mauGallery.listeners = function(options) {
       $(`#${lightboxId}`).modal("toggle");
     },
 
-  //chatgpt
-  //chatgpt
+  //Modification : On privilegie les fonctions classiques qui permettent d'utiliser this
+  //Modification : On ne doit push qu'une seule image par iteration. On utilise .first()
     prevImage: function() {
       console.log("prevImage");
     
@@ -149,10 +149,10 @@ $.fn.mauGallery.listeners = function(options) {
           }
         });
       } else {
-        $(".item-column").each(function() {
+        $(".item-column").each(function() { // On ne veut push qu'une seule image par iteration.
           if ($(this).children("img").data("gallery-tag") === activeTag) {
             imagesCollection.push($(this).children("img").first());
-          }
+          } // .first() permet de push uniquement l'image de l'element en cours sur la boucle
         });
       }
     
@@ -163,16 +163,16 @@ $.fn.mauGallery.listeners = function(options) {
         }
       });
     
-      let prevIndex = (index - 1 + imagesCollection.length) % imagesCollection.length;
+      let prevIndex = (index - 1 + imagesCollection.length) % imagesCollection.length;   // modification de calcul de l'index
       let prevImage = imagesCollection[prevIndex];
     
       $(".lightboxImage").attr("src", prevImage.attr("src"));
     },
-  //chatgpt
-  //chatgpt
+  //Modification
+  //Modification
 
-  //chatgpt
-  //chatgpt
+  //Modification : On privilegie les fonctions classiques qui permettent d'utiliser this
+  //Modification : On ne doit push qu'une seule image par iteration. On utilise .first()
     nextImage: function() {
       console.log("nextimage");
     
@@ -186,10 +186,10 @@ $.fn.mauGallery.listeners = function(options) {
       let activeTag = $(".tags-bar span.active-tag").data("images-toggle");
       let imagesCollection = [];
       if (activeTag === "all") {
-        $(".item-column").each(function() {
+        $(".item-column").each(function() { // On ne veut push qu'une seule image par iteration.
           if ($(this).children("img").length) {
             imagesCollection.push($(this).children("img").first());
-          }
+          } // .first() permet de push uniquement l'image de l'element en cours sur la boucle
         });
       } else {
         $(".item-column").each(function() {
@@ -206,13 +206,13 @@ $.fn.mauGallery.listeners = function(options) {
         }
       });
     
-      let nextIndex = (index + 1) % imagesCollection.length;
+      let nextIndex = (index + 1) % imagesCollection.length; // modification de calcul de l'index
       let nextImage = imagesCollection[nextIndex];
     
       $(".lightboxImage").attr("src", nextImage.attr("src"));
     },
-  //chatgpt
-  //chatgpt
+  //Modification
+  //Modification
 
     createLightBox(gallery, lightboxId, navigation) {
       gallery.append(`<div class="modal fade" id="${
